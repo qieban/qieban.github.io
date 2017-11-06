@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+<title>上拉、下拉刷新 - 切版移动css框架</title>
+<meta charset="utf-8" />
+
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" href="assets/css/qieban.css"  />
+
+
+</head>
+<body>
+
+
+	<div class="header">
+		<h1><a href="index.html"><img src="imgs/logo.png"/></a></h1>
+    	
+    </div>
+    
+    <div class="hero">
+    <p>网页打开自动播放背景音乐，<br/>可以手动关闭和开启</p>
+ </div>
+ 
+ 
+	<div class="bgMusic">
+		<!--背景音乐-->
+		<div id="music">
+			<audio id="music-audio" class="audio" loop="loop" autoplay="autoplay" preload="" src="mp3/bg.mp3"></audio>
+			<div class="btn">
+				<div class="btn-play">				</div>
+			</div> 
+		</div>
+		<!--//背景音乐-->
+	</div>
+
+	<div class="footer">
+	切版 qieban（.cn）</div>
+
+
+
+
+<script src="assets/js/jquery-1.8.3.min.js" ></script>
+<script src="assets/js/jquery.mobile-1.0.1.min.js"></script>
+<!--解决手机端click点击延迟-->
+<script src="js/fastclick.js"></script>
+<script src="assets/js/qieban.js" ></script>
+</body>
+</html>

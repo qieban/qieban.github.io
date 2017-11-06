@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+<title>组件 - 切版移动css框架</title>
+<meta charset="utf-8" />
+
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" href="assets/css/qieban.css"  />
+
+
+</head>
+<body>
+
+
+
+	<div class="header">
+		<h1><a href="index.html"><img src="imgs/logo.png"/></a></h1>
+    	<div class="left">
+        	        </div>
+    	<div class="right">        </div>
+    </div>
+
+<div class="wrapper hero">
+	<h1>highCharts.JS</h1>
+    <h2>适用于移动端的highCharts框架</h2>
+</div>
+
+<div class="wrapper">
+	<div id="container" style="width: 750px; height: 400px; margin: 0 auto"></div>
+	
+	<h4>代码调用</h4>
+	<pre>var chart;<br>	$(document).ready(function() {<br>		chart = new Highcharts.Chart({<br>			chart: {<br>				renderTo: 'container',<br>				margin: [80, 100, 60, 100],<br>				zoomType: 'xy'<br>			},<br>			exporting: {<br>				//去掉右上角的打印及其导出按钮<br>	            enabled:false<br>			},<br>			credits: {<br>				//去掉右下角的highcharts.com<br>			    enabled:false<br>			},<br>			title: {<br>				text: '',<br>				style: {<br>					margin: '10px 0 0 0' // center it<br>				}<br>			},<br>			subtitle: {<br>				//text: 'Source: WorldClimate.com',<br>				style: {<br>					margin: '0 0 0 0' // center it<br>				}<br>			},<br>			xAxis: [{<br>				categories: ['10月11日', '12', '13', '14', '15', '16', '17']<br>			}],<br>			yAxis: [{ // Primary yAxis<br>				labels: {<br>					formatter: function() {<br>						return this.value +'°C';<br>					},<br>					style: {<br>						color: '#89A54E', display:'none'<br>					}<br>				},<br>				title: {<br>					text: '',<br>					style: {<br>						color: '#89A54E'<br>					},<br>					margin: 60<br>				}<br>			}, { // Secondary yAxis<br>				title: {<br>					text: '',<br>					margin: 70,<br>					style: {<br>						color: '#4572A7'<br>					}<br>				},<br>				labels: {<br>					formatter: function() {<br>						return this.value +' mm';<br>					},<br>					style: {<br>						color: '#4572A7', display:'none'<br>					}<br>				},<br>				opposite: true<br>			}],<br>			tooltip: {<br>				formatter: function() {<br>					return ''+<br>						this.x +': '+ this.y +<br>						(this.series.name == 'Rainfall' ? ' mm' : '°C');<br>				}<br>			},<br>			legend: {<br>				layout: 'vertical',<br>			        <br>				itemStyle : {<br>			        'fontSize' : '16px'<br>			    },<br>				//enabled : false,<br>				style: {<br>					left: '50px',<br>					bottom: 'auto',<br>					right: 'auto',<br>					top: '20px'<br>				},<br>				backgroundColor: '#FFFFFF'<br>			},<br>			plotOptions: {<br>				column: {<br>					stacking: 'normal'<br>				}<br>			},<br>			series: [{<br>				name: '新病例',<br>				color: '#ee4a5a',<br>				type: 'column',<br>				yAxis: 1,<br>				data: [249.9, 271.5, 806.4, 129.2, 244.0, 276.0, 235.6]		<br>			<br>			}, {<br>				name: '老病例',<br>				color: '#00b494',<br>				type: 'column',<br>				yAxis: 1,<br>				data: [149.9, 71.5, 206.4, 229.2, 244.0, 276.0, 235.6]		<br>			<br>			},{<br>				name: '环比',<br>				color: '#ffcb10',<br>				type: 'spline',<br>				data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2]<br>			},{<br>				name: '同比',<br>				color: '#48b9ff',<br>				type: 'spline',<br>				data: [7.0, 9.5, 21.5, 14.5, 18.2, 6.9, 25.2]<br>			}]<br>		});<br>		<br>		<br>		//事件<br>		$('#new').click(function(){<br>			chart.series[1].hide();<br>			chart.series[0].show();<br>		})<br>		$('#old').click(function(){<br>			chart.series[1].show();<br>			chart.series[0].hide();<br>		})<br>	});</pre>
+</div>
+ 
+
+
+
+<div class="footer">
+	切版 qieban（.cn）</div>
+
+
+<script src="js/jquery.min.js" ></script>
+<script src="assets/js/jquery.mobile-1.0.1.min.js"></script>
+<!--解决手机端click点击延迟-->
+<script src="js/fastclick.js"></script>
+<script src="assets/js/qieban.js" ></script>
+<script type="text/javascript" src="js/highcharts/highcharts.js"></script>
+<script type="text/javascript" src="js/highcharts/modules/exporting.js"></script>
+<script type="text/javascript">
+	var chart;
+	$(document).ready(function() {
+		chart = new Highcharts.Chart({
+			chart: {
+				renderTo: 'container',
+				margin: [80, 100, 60, 100],
+				zoomType: 'xy'
+			},
+			exporting: {
+				//去掉右上角的打印及其导出按钮
+	            enabled:false
+			},
+			credits: {
+				//去掉右下角的highcharts.com
+			    enabled:false
+			},
+			title: {
+				text: '',
+				style: {
+					margin: '10px 0 0 0' // center it
+				}
+			},
+			subtitle: {
+				//text: 'Source: WorldClimate.com',
+				style: {
+					margin: '0 0 0 0' // center it
+				}
+			},
+			xAxis: [{
+				categories: ['10月11日', '12', '13', '14', '15', '16', '17']
+			}],
+			yAxis: [{ // Primary yAxis
+				labels: {
+					formatter: function() {
+						return this.value +'°C';
+					},
+					style: {
+						color: '#89A54E', display:'none'
+					}
+				},
+				title: {
+					text: '',
+					style: {
+						color: '#89A54E'
+					},
+					margin: 60
+				}
+			}, { // Secondary yAxis
+				title: {
+					text: '',
+					margin: 70,
+					style: {
+						color: '#4572A7'
+					}
+				},
+				labels: {
+					formatter: function() {
+						return this.value +' mm';
+					},
+					style: {
+						color: '#4572A7', display:'none'
+					}
+				},
+				opposite: true
+			}],
+			tooltip: {
+				formatter: function() {
+					return ''+
+						this.x +': '+ this.y +
+						(this.series.name == 'Rainfall' ? ' mm' : '°C');
+				}
+			},
+			legend: {
+				layout: 'vertical',
+			        
+				itemStyle : {
+			        'fontSize' : '16px'
+			    },
+				//enabled : false,
+				style: {
+					left: '50px',
+					bottom: 'auto',
+					right: 'auto',
+					top: '20px'
+				},
+				backgroundColor: '#FFFFFF'
+			},
+			plotOptions: {
+				column: {
+					stacking: 'normal'
+				}
+			},
+			series: [{
+				name: '新病例',
+				color: '#ee4a5a',
+				type: 'column',
+				yAxis: 1,
+				data: [249.9, 271.5, 806.4, 129.2, 244.0, 276.0, 235.6]		
+			
+			}, {
+				name: '老病例',
+				color: '#00b494',
+				type: 'column',
+				yAxis: 1,
+				data: [149.9, 71.5, 206.4, 229.2, 244.0, 276.0, 235.6]		
+			
+			},{
+				name: '环比',
+				color: '#ffcb10',
+				type: 'spline',
+				data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2]
+			},{
+				name: '同比',
+				color: '#48b9ff',
+				type: 'spline',
+				data: [7.0, 9.5, 21.5, 14.5, 18.2, 6.9, 25.2]
+			}]
+		});
+		
+		
+		//事件
+		$('#new').click(function(){
+			chart.series[1].hide();
+			chart.series[0].show();
+		})
+		$('#old').click(function(){
+			chart.series[1].show();
+			chart.series[0].hide();
+		})
+	});
+		
+</script>
+</body>
+</html>

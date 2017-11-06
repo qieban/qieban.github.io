@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Jquery实现仿搜索引擎文本框自动补全插件 - Jquery-school</title>
+
+<link rel="stylesheet" href="css/jquery.bigautocomplete.css" type="text/css" />
+
+
+<style>
+
+</style>
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.bigautocomplete.js?a"></script>
+<script type="text/javascript">
+$(function(){
+
+	$("#tt").bigAutocomplete({
+		width:543,
+		data:[
+			{title:"中国好声音"},
+			{title:"qietu.com"},
+			{title:"qietu.cn"},
+			{title:"a3"},
+			{title:"b1"},
+			{title:"b2"},
+			{title:"b3"},
+			{title:"c1"},
+			{title:"c2"},
+			{title:"c3"},
+			{title:"d1"},
+			{title:"d2"},
+			{title:"d3"},
+			{title:"e1"},
+			{title:"e2"},
+			{title:"e3"},
+			{title:"f1"},
+			{title:"f2"},
+			{title:"f3"},
+			{title:"g1"},
+			{title:"g2"},
+			{title:"g3"},
+			{title:"h1"},
+			{title:"h2"},
+			{title:"h3"},
+			{title:"i1"},
+			{title:"i2"},
+			{title:"i3"},
+			{title:"g1"},
+			{title:"g2"},
+			{title:"g3"},
+			{title:"k1"},
+			{title:"k2"},
+			{title:"k3"},
+			{title:"中国移动"},
+			{title:"中国好声音第三期"},
+			{title:"中国好声音 第一期"},
+			{title:"中国电信网上营业厅"},
+			{title:"中国工商银行"},
+			{title:"中国好声音第二期"},
+			{title:"中国地图"}
+		],
+		callback:function(data){
+			alert(data.title);	
+		}
+	});
+
+})
+</script>
+
+</head>
+<body>
+
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+.demo{width:720px;margin:30px auto;}
+.demo h2{font-size:16px;color:#3366cc;height:30px;}
+.demo li{float:left;}
+.text,.button{background:url(http://su.bdimg.com/static/superpage/img/spis_031ddf34.png) no-repeat;}
+.text{width:529px;height:22px;padding:4px 7px;padding:6px 7px 2px\9;font:16px arial;border:1px solid #cdcdcd;border-color:#9a9a9a #cdcdcd #cdcdcd #9a9a9a;vertical-align:top;outline:none;margin:0 5px 0 0;}
+.button{width:95px;height:32px;padding:0;padding-top:2px\9;border:0;background-position:0 -35px;background-color:#ddd;cursor:pointer}
+</style>
+
+<div class="demo">
+	<form action=" id="searchform" class="searchinfo">
+		<ul>
+			<li><input type="text" id="tt" value="" class="text" /></li>
+			<li><input type="submit" value="搜索" class="button" /></li>
+		</ul>
+	</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,977 @@
+
+img {
+	max-width:100%;
+	vertical-align:middle;
+	border:0;
+	-ms-interpolation-mode:bicubic;
+	-webkit-touch-callout:none
+}
+
+
+/**
+ * 切版 qieban（.cn）出品
+*/
+body, select, input, textarea {
+    color: #323232;
+}
+ body{ color:#333;  background:#ECECEC;  background:#fff; /*解决电脑设置保护色，网页空白处默认淡绿色问题*/}
+a{outline:none; text-decoration:none; color:#1570A6;} a:hover{ text-decoration:underline; color:#24459a;}
+html{zoom:1;}html *{outline:0;zoom:1;} html button::-moz-focus-inner{border-color:transparent!important;} 
+body{overflow-x: hidden;} 
+body,div,dl,dt,dd,ul,ol,li/*,h1,h2,h3,h4,h5,h6*/,pre,code,form,input,textarea,/*p,*/blockquote,th,td{margin:0;padding:0;} table{/*border-collapse:collapse;border-spacing:0;*/}
+p{
+	margin:0 0 0.5rem 0;
+}
+ /*fieldset,*/a img{border:0;} address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:normal;} 
+ li{list-style:none;}
+  caption,th{text-align:left;} h1,h2,h3,h4,h5,h6{/*font-size:100%;*/font-weight:normal;} 
+q:before,q:after{content:'';}
+
+hr{
+	border:none; clear:both; height:0; background:none; margin:0; padding:0; border-bottom:#eee solid 1px;  margin:0.5rem 0;
+}
+img { border: 0 none; height: auto; max-width: 100%; vertical-align: middle; }
+
+blockquote { border-left: 0.25rem solid #EEEEEE; margin: 0.5rem; padding: 0.5rem; }
+
+ul.unstyled, ol.unstyled{ list-style:none; }
+ul.circle{ list-style-type:circle; }
+ul.square{ list-style-type:square; }
+ul.cjk{ list-style-type:cjk-ideographic; }
+
+
+
+/*首字母*/
+.firstletter:first-letter{ font-size:200%;}
+/**
+ +------------------------------------------------------------------------------
+ * Public Class
+ +------------------------------------------------------------------------------
+ * @subpackage  RBAC
+ +------------------------------------------------------------------------------
+ */
+.clearfix:after {content:"."; display:block; height:0; clear:both; visibility:hidden; }.clearfix {display:block;}.clear{ clear:both;}/* 清除浮动*/
+.colwrapper { overflow:hidden; zoom:1 /*for ie*/; margin:0.25rem auto; }/* 高度自适应 */ 
+.strong{ font-weight: bold;} .left{ float: left;} .right{ float: right;} .center{ margin:0 auto; text-align:center;}
+.show{ display:block; visibility:visible;}.hide{ display: none !important; /*visibility:hidden;*/}
+.block{ display:block;} .inline{ display:inline;}
+.transparent{filter:alpha(opacity=50); -moz-opacity:0.5;/** Firefox 3.5即将原生支持opacity属性，所以本条属性只在Firefox3以下版本有效 ***/ -khtml-opacity: 0.5; opacity: 0.5; } .break{ word-wrap:break-word;overflow:hidden; /*word-break:break-all;*/}
+
+small{color: #999999;
+    font-size: 80%;}
+.canvas { position: relative; }
+.relative { position: relative; }
+code, pre { border-radius: 3px 3px 3px 3px; color: #333333; font-size: 12px; padding: 0 3px 2px; }
+
+pre{ background-color: #F7F7F9; border: 1px solid #E1E1E8; border-radius: 4px 4px 4px 4px; display: block; font-size: 0.8rem; margin: 0 0 9px; padding: 8.5px; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;}
+
+code { background-color: #F7F7F9; border: 1px solid #E1E1E8; color: #0088CC; padding: 2px 4px; }
+pre ol{
+	margin: 0 0 0 14px;
+}
+pre.unstyled{
+	background:none; color:#333; border:none;
+}
+
+/*插入flash默认灰色*/
+object{ background:gray; display:block;}
+
+.pink{ color:#ff00ff;} .blue{ color:#0000ff;} .deepblue{ color:#000099;} .gray{ color:#999999;} .red{ color:#ff0000;} .black{ color:#000;} .white{ color:white;} .green{color:green;}
+
+.underline{ text-decoration:underline;} .dashedline{ border-bottom:dashed 1px #666;} ol.dashedline{ border:none; } ol.dashedline li{ border-bottom:dashed 1px #666; padding:5px; }
+
+
+/* 固定不动 */
+.fixed{
+	position:fixed; clip:rect(0 100% 100% 0); _position:absolute;
+	
+	/* 底部 */
+	bottom:0px; left:0px; _top:expression(document.documentElement.scrollTop+document.documentElement.clientHeight-this.clientHeight);
+	/*_left:expression(document.documentElement.scrollLeft + document.documentElement.clientWidth - offsetWidth);*/
+	
+	/* 左侧 */
+	/*left:0px;*/
+	/*_top:expression(document.documentElement.scrollTop+document.documentElement.clientHeight-this.clientHeight);*/
+	/*_left:expression(document.documentElement.scrollLeft + document.documentElement.clientWidth - offsetWidth);*/
+}
+.fixed.scrolltotop, .fixed.livechat{
+	 bottom:1rem; right:20px; left:auto; background:#85c2f2; width:2.5rem; height:2.5rem; text-align:center; line-height:2.5rem; font-size:2.5rem; color:#fff; display:block; _display:none;
+}
+a:hover.fixed.scrolltotop, a:hover.fixed.livechat{
+	background:#2d96e9; text-decoration:none;
+}
+.fixed.livechat{
+	bottom:75px;
+}
+
+*html{ background-image:url(about:blank); background-attachment:fixed; /* 解决固定层在IE6下闪的问题 */}
+
+
+/* png透明 */
+.pngfix{filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='images/x.png');}
+
+/* 渐变 */
+.gradient{filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#dedede);
+    background: -moz-linear-gradient(top, #ffffff, #dedede);}
+	
+.radius
+{	
+-webkit-border-radius: 4px;   /*只支持webkit内核的浏览器*/
+border-radius: 4px;  /*只支持IE内核的浏览器（IE>=7)*/
+-moz-border-radius : 4px; /*只支持Mozilla内核的浏览器*/
+border:#ddd solid 1px;
+padding:4px;
+}
+
+.highlighted {
+    background: none repeat scroll 0 0 #00ADEE;
+    color: #FFFFFF;
+    padding: 0 5px;
+}
+
+/*超出省略号显示*/
+.ellipsis{
+	white-space:nowrap;/*设置不折行*/
+	text-overflow:ellipsis;/*这就是省略号喽*/
+	-o-text-overflow:ellipsis;/*兼容opera*/
+	width:80px;
+	overflow:hidden;
+}
+/*文字闪动*/
+.blink{
+	text-decoration:blink;
+}
+
+
+/* 解决ie下连接加粗的鼠标样式问题*/
+a strong{ cursor:pointer;}
+
+input[type=text],textarea, .txt, .txts{
+	border: #ccc solid 1px; padding: 5px 20px;
+	
+}
+	label{
+		display: inline-block;
+    vertical-align: top;
+	margin:0 10px;
+  
+	}
+	
+	input[type=button],input[type=submit]{
+
+	background:#fed100;
+    color: #000;
+    font-weight: bold;
+   padding: 0.6rem 0; 
+   width:100%;
+   font-size:1.2rem;
+   border: 0;
+	}
+
+
+input[type=radio] {
+    display: none;
+}
+input[type=radio] + label {
+	background:#eee;
+	width:1.3rem; height:1.3rem;
+	border-radius:1.3rem;
+    cursor: pointer;
+    display: inline-block; border: #000 solid 2px;
+}
+input[type=radio]:checked + label {
+	background:#fed100;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+input[type=checkbox] + label {
+	background:#eee;
+	width:1.3rem; height:1.3rem;
+    cursor: pointer;
+    display: inline-block; border: #000 solid 2px;
+}
+input[type=checkbox]:checked + label {
+	background:#fed100;
+}
+
+
+table { /*border-collapse: collapse; border-spacing: 0;*/ max-width: 100%; background: #ddd; }
+table caption{
+	background: #bbb ; text-align: center; color: #fff;
+}
+td{
+	background: #fff;
+}
+th{
+	background: #ccc; text-align: center; color: #fff;
+}
+table td.selected, table th.selected{ background:#DBEFF9; }
+.table {  margin-bottom: 1rem; width: 100%; }
+.table th, .table td { line-height: 1rem; padding: 0.4rem; vertical-align: top; }
+.table th { font-weight: bold; }
+.table thead th, .table thead td { vertical-align: bottom; background:#DBEFF9; }
+table.bordered { -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-right-colors: none; -moz-border-top-colors: none; border-collapse: separate; border-color: #DDDDDD #DDDDDD #DDDDDD -moz-use-text-color; border-image: none; border-radius: 4px 4px 4px 4px; border-style: none solid solid none; border-width: 1px 1px 1px 0; }
+table.bordered th, table.bordered td { border-left: 1px solid #DDDDDD; border-top: 1px solid #DDDDDD; }
+
+.bordered{ border: 1px solid #DDDDDD; border-radius: 4px 4px 4px 4px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055); padding:0.25rem; }
+.bordered:hover{ border-color:#bbb; }
+
+
+
+body{
+	/*max-width:640px; min-width: 320px;*/ background: #f9f9f9; margin: 0 auto; font-size:14px; /*max-width: 750px;*/
+}
+*{ /*border-radius:2px;*/}
+
+
+/*20150130*/
+.layout{
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    /*width: 640px;*/
+    /*box-shadow: rgba(0,0,0,0.2) 0 0 5px;*/
+   /*max-width: 750px;*/
+}
+body,input,textarea,button,select,pre,code{
+    color: #333;
+    font-size: 14px;
+    line-height: 1.7;
+}
+a{
+	/*color: #333;*/
+}
+a:hover{
+	text-decoration: none;
+}
+
+.wrapper{
+	padding:15px; background: #fff;
+}
+.header, .footer{
+	
+	
+	font-weight:bold; text-align:center;
+	
+	width:100%;
+}
+.header {
+	background:#fed100; padding:10px 0;
+}
+.header img{
+height:60px;
+}
+.footer {
+	font-weight:normal; background:#fefefe; padding:1rem 0; font-family: arial; color: #999;
+}
+
+.header{
+	position:relative; 
+}
+.header .left,
+.header .right{
+	position:absolute; left:1rem; top:0; height:100%; font-size:1.2rem; font-weight: normal;
+}
+.header .right{
+	left:auto; right:1rem;
+}
+.header a{
+    
+}
+.header h1{
+	margin:0; font-size:0.9rem; font-weight:bold;
+}
+
+
+.layout.active .aside{
+	display: block;
+}
+
+.aside {
+    background: none repeat scroll 0 0 #323436;
+    bottom: 0;
+    position:fixed;
+    top: 0;
+    width: 13rem;
+	overflow-y:scroll;
+	color:#fff;
+	display: none;
+}
+
+.list{
+	background: #fff; padding: 0 20px;
+}
+.list li{
+	clear:both;	font-size: 0.8rem;
+	border-bottom:1px solid #eee;
+}
+.list li:last-child{ border-bottom: 0;}
+.list li a{
+	color:#444;
+	display:block; padding: 0.5rem 1rem; position: relative; font-size: 18px; font-weight:bold;
+    /*text-overflow: ellipsis;
+    white-space: nowrap;*/
+	
+	padding-right: 1.75rem;
+ 
+  
+  height:auto; overflow:hidden; clear:both;
+  
+  display: flex;
+
+
+}
+.list li.selected a{
+	background:#eee;
+	font-weight:bold;
+	cursor:pointer;
+	text-decoration:none;
+}
+.list li i{
+	margin: 0 1.5rem 0 1rem; font-size: 1.5rem;
+}
+.list li small{
+	line-height: 2rem; margin-left: 0.5rem;
+}
+.list-media h2{
+	margin:0; line-height:1.5em; font-size:1.1rem;
+}
+.list-media p{
+	font-size:0.8rem; font-weight:normal;
+}
+.list-media .img{
+	float:left; display:inline; width:4rem;
+}
+.list-media .text{
+	float:left; display:inline; margin-left:0.5rem;
+}
+.list-media .text h2{
+	height:1.5rem;
+	display:block;
+	 overflow: hidden;
+    text-overflow: ellipsis;
+}
+.list-media .text p{
+
+	height:2.5rem;
+	display:block;
+	 overflow: hidden;
+    text-overflow: ellipsis;
+	line-height:1.5em;
+}
+
+.list-form .group{
+	border-bottom: #fafafa solid 0.5rem; padding: 0.5rem;
+}
+.list-form .head{
+	border-bottom: #ccc solid 1px; text-align: center;
+}
+.list-form li{
+	margin-bottom:0.5rem; padding:1rem; border-bottom:#fafafa solid 1px; height: auto; overflow: hidden; font-size: 1.3rem;
+}
+.list-form li:last-child{
+	border-bottom: 0;
+}
+.list-form li .label{
+	float: left; 
+}
+.list-form li .field{
+	float: right;
+}
+.list-form .txt,
+.list-form .txts{
+	width: 20rem; border: 0;  background: #fbfbfb; text-align: right;
+}
+.list-form .txt-small{
+	width: 7.5rem;
+}
+.list-form .btn-small{
+	width: 7.5rem;
+}
+
+
+
+.aside .list{
+	background:#222;
+}
+.aside .list li a{
+	color:#fff;
+	border-bottom:1px solid #333;
+}
+.content{
+	padding:1rem 1rem 1rem 1rem; background: #fff;
+}
+.hero{
+	text-align:center; background:#fff; overflow:hidden; padding:3.5rem 1rem 6.5rem 1rem;  background-size: cover; font-size:18px;
+}
+
+.hero h1{
+	line-height:1.2rem; font-weight:bold; font-size: 1.3rem;
+}
+
+
+
+.btn-group{
+	display: flex;
+}
+.btn{
+	line-height:1em;
+	display:inline-block;
+	background: #e6e6e6;
+	padding: 0.5rem 1.5rem;
+	color: #333;
+}
+.btn-large{
+	padding: 1rem 2rem;
+}
+.btn-inverse{
+    border: 1px solid #333;
+    background: none;
+}
+.btn-rounded{
+	border-radius:2rem;
+}
+.btn.active{
+	background:#ccc; color:#fff;
+}
+.btn-group .btn{
+	display:block; border-right:none;
+}
+.btn-group .btn:last-child{
+	border-right:#ccc solid 1px;
+}
+
+.tabs .tab{
+	display:none;
+}
+.tabs .tab.active{
+	display:block;
+}
+
+
+/*弹窗*/
+.dialog{
+	width:13.5rem; position:absolute; left:50%; margin-left:-6.75rem; top:3rem; background:#fff; z-index:999; border-radius:0.35rem; overflow:hidden;
+	
+	/*css3*/
+	-webkit-transition-property:opacity, -webkit-transform;
+	transition-property:opacity, transform;
+	-webkit-transition-duration:500ms;
+	transition-duration:500ms;
+	-webkit-transition-timing-function:cubic-bezier(0.25, 0.46, 0.33, 0.98);
+	transition-timing-function:cubic-bezier(0.25, 0.46, 0.33, 0.98);
+	
+	-webkit-transition-delay:0ms;
+	transition-delay:0ms;
+	
+	-webkit-transform: scale(0);   
+            -moz-transform: scale(0);     
+            -ms-transform: scale(0);      
+            -o-transform: scale(0);     
+}
+.dialog-selected{
+	-webkit-transform: scale(1);     
+            -moz-transform: scale(1);   
+            -ms-transform: scale(1);   
+            -o-transform: scale(1);   
+}
+.dialog-head{
+	line-height:1.5rem; border-bottom:#ccc solid 1px; padding:0.5rem 1rem;
+}
+.dialog-body{
+	padding:1rem;
+}
+.dialog-foot{
+	border-top:#ccc solid 1px; display: flex;
+}
+
+.dialog-button{
+	width:100%; text-align:center; padding:0.5rem 0; 
+}
+.dialog-button:hover{
+	background:#eee;
+}
+.dialog-button:first-child{
+	border-right:#ccc solid 1px;
+}
+.dialog-text{
+	border:#ccc solid 1px; padding:0.5rem; width:100%;
+	/*假如您需要并排放置两个带边框的框，可通过将 box-sizing 设置为 "border-box"。这可令浏览器呈现出带有指定宽度和高度的框，并把边框和内边距放入框中。*/
+	box-sizing:border-box;
+-moz-box-sizing:border-box; /* Firefox */
+-webkit-box-sizing:border-box; /* Safari */
+}
+.dialog-text:first-child{
+	border-radius:0.35rem 0.35rem 0 0;
+}
+.dialog-text:last-child{
+	border-top:none;
+	border-radius:0 0 0.35rem 0.35rem;
+}
+
+
+.slider{
+	position:relative; z-index:3; margin-left:0; height:16.5rem; overflow:hidden; background:#eee;
+}
+.slider li{
+	position:absolute; left:0; top:0; display:none; line-height:16.5rem; text-align:center; width:100%;
+}
+.slider li.selected{
+	display:block; z-index:2;
+}
+.slider .tip{
+	font-size:0.9rem; color:#fff; z-index:7; position:absolute; left:0; bottom:0; width:100%; background:#666; height:2rem; text-align:center; line-height:2rem;
+}
+.slider .num{
+	position:absolute; left:0; bottom:2.5rem; width:100%; text-align:center; z-index:9;
+}
+.slider .num span{
+	background:#999; width:0.8rem; height:0.8rem; border-radius:0.8rem; display:inline-block; position:relative; cursor:pointer; 
+}
+.slider .num span.selected{
+	background:#666;
+}
+
+
+.contacts{
+	position:relative;
+}
+.contacts .list{
+}
+.contacts dl{
+	border-top:#ebebeb solid 1px; font-size:1.2rem;
+}
+.contacts dt{
+	border-bottom:#ebebeb solid 1px; padding-left:17.5rem; height:2rem; line-height:2rem; background:#eee;
+}
+.contacts dd{
+	
+}
+.contacts dd a{
+	display:block; width:100%; position:relative;
+	padding:0.5rem; padding-left:5rem;  border-bottom:#ebebeb solid 1px; height:4rem; 
+}
+.contacts dd:last-child{
+	border-bottom:none;
+}
+.contacts dd .img{
+	position:absolute; left:0.5rem; top:0.5rem;
+}
+.contacts dd .img img{
+	width: 4rem;
+}
+.contacts dd .text{}
+.contacts dd .text h4{
+	margin:0;
+}
+.contacts dd .text h5{
+	margin:0;
+}
+.contacts .abc{
+	position:fixed; top:0; bottom: 0; right:0; font-size:1rem; text-align:center; background:#fff; width: 2rem; box-shadow: rgba(0,0,0,0.2) -1px 0 2px; line-height: 1.2;
+}
+.contacts .abc ul{
+	position: absolute; height: 31rem; left: 0; right: 0; top: 50%; margin-top: -15.5rem;
+}
+.contacts .abc .selected a{
+	color:#333;
+}
+
+
+
+
+.row {
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+	-webkit-box-pack:justify;
+	-ms-flex-pack:justify;
+	-webkit-justify-content:space-between;
+	justify-content:space-between;
+	-webkit-box-lines:multiple;
+	-moz-box-lines:multiple;
+	-webkit-flex-wrap:wrap;
+	-ms-flex-wrap:wrap;
+	flex-wrap:wrap;
+	-webkit-box-align:start;
+	-ms-flex-align:start;
+	-webkit-align-items:flex-start;
+	align-items:flex-start
+}
+.row>[class*=col] {
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+box-sizing:border-box
+}
+.row .col-auto {
+	width:100%
+}
+.row .col100 {
+	width:100%;
+width:-webkit-calc((100% - 15px*0)/ 1);
+width:calc((100% - 15px*0)/ 1)
+}
+
+.row .col95 {
+	width:95%;
+width:-webkit-calc((100% - 15px*.05263157894736836)/ 1.0526315789473684);
+width:calc((100% - 15px*.05263157894736836)/ 1.0526315789473684)
+}
+
+.row .col90 {
+	width:90%;
+width:-webkit-calc((100% - 15px*.11111111111111116)/ 1.1111111111111112);
+width:calc((100% - 15px*.11111111111111116)/ 1.1111111111111112)
+}
+
+.row .col85 {
+	width:85%;
+width:-webkit-calc((100% - 15px*.17647058823529416)/ 1.1764705882352942);
+width:calc((100% - 15px*.17647058823529416)/ 1.1764705882352942)
+}
+
+.row .col80 {
+	width:80%;
+width:-webkit-calc((100% - 15px*.25)/ 1.25);
+width:calc((100% - 15px*.25)/ 1.25)
+}
+
+.row .col75 {
+	width:75%;
+width:-webkit-calc((100% - 15px*.33333333333333326)/ 1.3333333333333333);
+width:calc((100% - 15px*.33333333333333326)/ 1.3333333333333333)
+}
+
+.row .col66 {
+	width:66.66666666666666%;
+width:-webkit-calc((100% - 15px*.5000000000000002)/ 1.5000000000000002);
+width:calc((100% - 15px*.5000000000000002)/ 1.5000000000000002)
+}
+
+.row .col60 {
+	width:60%;
+width:-webkit-calc((100% - 15px*.6666666666666667)/ 1.6666666666666667);
+width:calc((100% - 15px*.6666666666666667)/ 1.6666666666666667)
+}
+
+.row .col50 {
+	width:50%;
+width:-webkit-calc((100% - 15px*1)/ 2);
+width:calc((100% - 15px*1)/ 2)
+}
+
+.row .col40 {
+	width:40%;
+width:-webkit-calc((100% - 15px*1.5)/ 2.5);
+width:calc((100% - 15px*1.5)/ 2.5)
+}
+
+.row .col33 {
+	width:33.333333333333336%;
+width:-webkit-calc((100% - 15px*2)/ 3);
+width:calc((100% - 15px*2)/ 3)
+}
+
+.row .col25 {
+	width:25%;
+width:-webkit-calc((100% - 15px*3)/ 4);
+width:calc((100% - 15px*3)/ 4)
+}
+
+.row .col20 {
+	width:20%;
+width:-webkit-calc((100% - 15px*4)/ 5);
+width:calc((100% - 15px*4)/ 5)
+}
+
+.row .col15 {
+	width:15%;
+width:-webkit-calc((100% - 15px*5.666666666666667)/ 6.666666666666667);
+width:calc((100% - 15px*5.666666666666667)/ 6.666666666666667)
+}
+
+.row .col10 {
+	width:10%;
+width:-webkit-calc((100% - 15px*9)/ 10);
+width:calc((100% - 15px*9)/ 10)
+}
+
+.row .col5 {
+	width:5%;
+width:-webkit-calc((100% - 15px*19)/ 20);
+width:calc((100% - 15px*19)/ 20)
+}
+
+html{ height:100%;}
+.preloader{
+	background:url(../imgs/preloader.gif) no-repeat center #fff; height:100%;
+}
+.preloader .layout{ display:none;}
+
+
+
+/*2015.7.29*/
+.label-switch {
+  display: inline-block;
+  vertical-align: middle;
+  width: 2.6rem;
+  border-radius: 0.8rem;
+  box-sizing: border-box;
+  height: 1.6rem;
+  position: relative;
+  cursor: pointer;
+  -ms-flex-item-align: center;
+  -webkit-align-self: center;
+  align-self: center;
+}
+.label-switch .checkbox {
+  width: 2.6rem;
+  border-radius: 0.8rem;
+  box-sizing: border-box;
+  height: 1.6rem;
+  background: #e5e5e5;
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+}
+.label-switch .checkbox:before {
+  content: ' ';
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 2.4rem;
+  border-radius: 0.8rem;
+  box-sizing: border-box;
+  height: 1.4rem;
+  background: #fff;
+  z-index: 1;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.label-switch .checkbox:after {
+  content: ' ';
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 1.4rem;
+  background: #fff;
+  position: absolute;
+  z-index: 2;
+  top: 2px;
+  left: 2px;
+  box-shadow: 0 2px 0.25rem rgba(0, 0, 0, 0.4);
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+}
+.label-switch input[type="checkbox"] {
+  display: none;
+}
+.label-switch input[type="checkbox"]:checked + .checkbox {
+  background: #4cd964;
+}
+.label-switch input[type="checkbox"]:checked + .checkbox:before {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+.label-switch input[type="checkbox"]:checked + .checkbox:after {
+  -webkit-transform: translateX(1.1rem);
+  transform: translateX(1.1rem);
+}
+html.android .label-switch input[type="checkbox"] + .checkbox {
+  -webkit-transition-duration: 0;
+  transition-duration: 0;
+}
+html.android .label-switch input[type="checkbox"] + .checkbox:after,
+html.android .label-switch input[type="checkbox"] + .checkbox:before {
+  -webkit-transition-duration: 0;
+  transition-duration: 0;
+}
+
+/*//spiner*/
+.spinner{
+	position: relative;
+}
+.spinner:before{
+	position: absolute; width: 50px; height: 50px; left: 0; top: 0; background: red;
+}
+
+
+/*******/
+.range-slider {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-left: -1px;
+  -ms-flex-item-align: center;
+  -webkit-align-self: center;
+  align-self: center;
+}
+.range-slider input[type="range"] {
+  position: relative;
+  height: 1.4rem;
+  width: 100%;
+  margin: 4px 0 5px 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #b7b8b7), color-stop(100%, #b7b8b7));
+  background: linear-gradient(to right, #b7b8b7 0, #b7b8b7 100%);
+  background-position: center;
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  outline: 0;
+}
+.range-slider input[type="range"]:after {
+  height: 2px;
+  background: #fff;
+  content: ' ';
+  width: 5px;
+  top: 50%;
+  margin-top: -1px;
+  left: -5px;
+  z-index: 1;
+  position: absolute;
+}
+.range-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  border: none;
+  height: 1.4rem;
+  width: 1.4rem;
+  position: relative;
+  background: none;
+}
+.range-slider input[type="range"]::-webkit-slider-thumb:after {
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 1.4rem;
+  background: #fff;
+  z-index: 10;
+  box-shadow: 0 2px 0.2rem rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: ' ';
+}
+.range-slider input[type="range"]::-webkit-slider-thumb:before {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 100rem;
+  height: 2px;
+  margin-top: -1px;
+  z-index: 1;
+  background: #007aff;
+  content: ' ';
+}
+
+/*上拉刷新*/
+.pull-up,
+.pull-down{
+	background: #eee; font-size: 22px; text-align: center; padding: 30px 0; display: none;
+}
+.pull-up span,
+.pull-down span{
+	background: url(../imgs/loading.gif) no-repeat center top; display: inline-block; padding-top: 40px;
+}
+.pull-down{
+	
+}
+
+/*背景音乐*/
+#music{
+	position: absolute; left: 0px; top: 20px; 
+}
+#music .btn{
+	background: url(../imgs/music_play.gif) no-repeat; width: 80px; height: 80px;
+}
+#music .btn-play{
+	background: url(../imgs/music.png) no-repeat; width: 40px; height: 40px; position: absolute; left: 50%; margin-left: -20px; top: 50%; margin-top: -20px; background-size: cover;
+	-webkit-animation:rotate2d 1.2s linear infinite;
+	animation:rotate2d 1.2s linear infinite;
+}
+#music.stopped .btn{
+	background: none;
+}
+#music.stopped .btn-play{
+	-webkit-animation:none;
+	animation:none;
+}
+
+/*rotate2d*/
+.rotate2d {
+	-webkit-animation-timing-function:linear;
+	animation-timing-function:linear;
+	-webkit-animation-name:rotate2d;
+	animation-name:rotate2d
+}
+@-webkit-keyframes rotate2d {
+from {
+-webkit-transform:rotate(0deg);
+transform:rotate(0deg)
+}
+to {
+	-webkit-transform:rotate(360deg);
+	transform:rotate(360deg)
+}
+}
+@keyframes rotate2d {
+from {
+-webkit-transform:rotate(0deg);
+transform:rotate(0deg)
+}
+to {
+	-webkit-transform:rotate(360deg);
+	transform:rotate(360deg)
+}
+}
+/*rotate2d*/
+
+/*背景音乐*/
+.bg-music{
+	background: #333; height: 500px; position: relative;
+}
+
+/*弹幕*/
+#danmaku{
+	position: absolute; right: 1rem; top: 15rem; text-align: right; width: 15rem;
+}
+#danmaku li{
+	margin-bottom: 0.5rem; 
+}
+#danmaku li:nth-child(n+5){
+	display: ;
+}
+#danmaku .wrap{
+	background: #7b7874; color: #fff; display: inline-block; padding:0.1rem 0; padding-left: 1.5rem;  border-radius:0.8rem; line-height: 1.25rem; position: relative; min-height: 1.5rem;
+}
+#danmaku .img{
+	width: 1.3rem; height: 1.3rem; position: absolute; left: 0.1rem; top: 0.1rem; border-radius:1.3rem; overflow: hidden;
+}
+#danmaku .img img{
+	max-height: 100%; max-width: 100%;
+}
+#danmaku .txt{
+	padding-right: 0.5rem; border: none; font-size: 0.8rem;
+}
+

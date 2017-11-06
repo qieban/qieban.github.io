@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+<title>列表 - 切版移动css框架</title>
+<meta charset="utf-8" />
+
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" href="assets/css/qieban.css"  />
+<link rel="stylesheet" href="js/bigautocomplete/jquery.bigautocomplete.css" type="text/css" />
+
+
+</head>
+<body>
+
+    	
+      <div class="header">
+		<h1><a href="index.html"><img src="imgs/logo.png"/></a></h1>
+    	
+    </div>
+
+
+ <div class="hero">
+    <p>自动列表搜索框</p>
+ </div>
+
+   <div class="content">
+   	  <input type="text" id="tt" value="" class="text" />
+   </div>
+    
+   
+    
+ 
+
+
+
+<div class="footer">
+	切版 qieban（.cn）</div>
+
+
+
+
+<script src="assets/js/jquery-1.8.3.min.js" ></script>
+<script src="assets/js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="js/bigautocomplete/jquery.bigautocomplete.js?a"></script>
+<!--解决手机端click点击延迟-->
+<script src="js/fastclick.js"></script>
+<script src="assets/js/qieban.js" ></script>
+
+<script type="text/javascript">
+$(function(){
+
+	$("#tt").bigAutocomplete({
+		width:543,
+		data:[
+			{title:"中国好声音"},
+			{title:"qietu.com"},
+			{title:"qietu.cn"},
+			{title:"a3"},
+			{title:"b1"},
+			{title:"b2"},
+			{title:"b3"},
+			{title:"c1"},
+			{title:"c2"},
+			{title:"c3"},
+			{title:"d1"},
+			{title:"d2"},
+			{title:"d3"},
+			{title:"e1"},
+			{title:"e2"},
+			{title:"e3"},
+			{title:"f1"},
+			{title:"f2"},
+			{title:"f3"},
+			{title:"g1"},
+			{title:"g2"},
+			{title:"g3"},
+			{title:"h1"},
+			{title:"h2"},
+			{title:"h3"},
+			{title:"i1"},
+			{title:"i2"},
+			{title:"i3"},
+			{title:"g1"},
+			{title:"g2"},
+			{title:"g3"},
+			{title:"k1"},
+			{title:"k2"},
+			{title:"k3"},
+			{title:"中国移动"},
+			{title:"中国好声音第三期"},
+			{title:"中国好声音 第一期"},
+			{title:"中国电信网上营业厅"},
+			{title:"中国工商银行"},
+			{title:"中国好声音第二期"},
+			{title:"中国地图"}
+		],
+		callback:function(data){
+			alert(data.title);	
+		}
+	});
+
+})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+<title>表单 - 切版移动css框架</title>
+<meta charset="utf-8" />
+
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" href="assets/css/qieban.css"  />
+ <style>
+ /*angularjs为为空的表单添加颜色*/
+input.ng-invalid {
+    background-color: lightblue;
+}
+input.ng-empty {
+    background-color: lightblue;
+}
+input.ng-not-empty {
+    background-color: lightblue;
+}
+input.ng-touched {
+    background-color: lightblue;
+}
+input.ng-untouched {
+    background-color: lightblue;
+}
+input.ng-valid {
+    background-color: lightblue;
+}
+input.ng-dirty {
+    background-color: lightblue;
+}
+input.ng-pending {
+    background-color: lightblue;
+}
+input.ng-pristine {
+    background-color: lightblue;
+}
+</style>
+</head>
+<body ng-app="" ng-init="formName='formtest'; mobileText='13177024566'">
+
+       <div class="header">
+		<h1><a href="index.html"><img src="imgs/logo.png"/></a></h1>
+    	
+    </div>
+
+
+ <div class="hero">
+ 	<h1>表单<span ng-bind='formName'></span></h1>
+    <p>提供了一个可靠的表单原件、和表单美化<br/>快速构建一个移动端表单。</p>
+ </div>
+ 
+
+    
+    <div class="list list-form">
+    	<form name="myForm">
+    	<div class="group">
+    		<div class="head">
+    			基本信息    		</div>
+    		<div class="list">
+    			<ul>
+    				<li>
+    					<div class="label">
+    						姓名：    					</div>
+    					<div class="field">
+    						<input type="text" class="txt" name="" id="" value="" ng-model="name" />
+    						<p>您输入的内容是{{name}}</p>
+    					</div>
+    				</li>
+    				<li>
+    					<div class="label">
+    						性别：    					</div>
+    					<div class="field">
+    						<input type="radio" name="sex" id="boy" value="" checked="" />
+    						<label for="boy"></label>
+    						男
+    						<input type="radio" name="sex" id="girl" value="" />
+    						<label for="girl"></label>
+    						女    					</div>
+    				</li>
+    				<li>
+    					<div class="label">
+    						手机号：    					</div>
+    					<div class="field">
+    						<input type="text" class="txt" name="" ng-model='mobileText' id="" value="" placeholder="请输入手机号" />
+    					</div>
+    				</li> 
+    				<li>
+    					<div class="label">
+    						获取验证码：    					</div>
+    					<div class="field">
+    						<input type="text" class="txt txt-small" name="" id="" value="" placeholder="验证码" />
+    						<input type="button" class="btn btn-small" name="" id="getcode" value="获取验证码" />
+    					</div>
+    				</li>
+    				<li>
+    					<div class="label">
+    						邮箱：    					</div>
+    					<div class="field">
+    						<input type="email" class="txt" name="myAddress" id="" value="" ng-model='txt' placeholder="请输入邮箱" />
+    						<p><span ng-show="myForm.myAddress.$error.email">不是一个合法的邮箱地址</span></p>
+    					</div>
+    				</li>
+    				<li>
+    					<div class="label">
+    						密码：    					</div>
+    					<div class="field">
+    						<input name="" class="txt" type="text" placeholder="请输入密码">        
+    					</div>
+    				</li>
+    				<li>
+    					<div class="label">
+    						确认密码：    					</div>
+    					<div class="field">
+    						<input name="" class="txt" type="text" placeholder="请再次输入密码">           
+    					</div>
+    				</li>
+    			</ul>
+    		</div>
+    	</div>
+    	<div class="group">
+    		<div class="head">
+    			详细信息    		</div>
+    		<div class="list">
+    			<ul>
+    				<li>
+    					<div class="label">
+    						生日：    					</div>
+    					<div class="field">
+    						<input type="text" class="txt" name="" id="" value="" />
+    					</div>
+    				</li>
+    				<li>
+    					<div class="label">
+    						年龄：    					</div>
+    					<div class="field">
+    						<div class="spinner">
+			             		<input type="number"  step="1" value="50" max="100" min="0" class="txt">
+			             	</div>
+    					</div>
+    				</li>
+    				<li>
+    					<div class="label">
+    						爱好：    					</div>
+    					<div class="field">
+    						<input name="checkbox" type="checkbox" value="" id="checkbox1">
+    						<label for="checkbox1"></label>上网 
+			             	<input name="checkbox" type="checkbox" value="" id="checkbox2">
+			             	<label for="checkbox2"></label>睡觉 
+			             	<input name="checkbox" type="checkbox" value="" id="checkbox3">
+			             	<label for="checkbox3"></label>打球 
+			             	<input name="checkbox" type="checkbox" value="" id="checkbox4">
+			             	<label for="checkbox4"></label>游泳    					</div>
+    				</li>
+    				<li>
+    					<div class="label">
+    						开启消息提醒：    					</div>
+    					<div class="field">
+    						<label class="label-switch">
+				                <input type="checkbox">
+				                <div class="checkbox"></div>
+			                </label>   
+    					</div>
+    				</li>
+    				<li>
+    					<div class="label">
+    						身高：    					</div>
+    					<div class="field">
+    						<div class="range-slider">
+			                <input type="range" step="0.1" value="50" max="100" min="0" class="">
+			                </div>
+    					</div>
+    				</li>
+    				<li>
+    					<div class="label">
+    						简介：    					</div>
+    					<div class="field">
+    						<textarea name="" rows="5" placeholder="请输入简介" class="txts"></textarea>          
+    					</div>
+    				</li>
+    				<li>
+    					<input name="" type="button" class="button" value="提交">
+    				</li> 
+    			</ul>
+    		</div>
+    	</div> 
+    </form>
+    </div> 
+
+ 
+ 
+
+
+<div class="footer">
+	切版 qieban（.cn）</div>
+  
+
+
+
+
+<script src="assets/js/jquery-1.8.3.min.js" ></script>
+<script src="assets/js/jquery.mobile-1.0.1.min.js"></script>
+<!--解决手机端click点击延迟-->
+<script src="js/fastclick.js"></script>
+<script src="assets/js/angular.min.js"></script>
+<script src="assets/js/qieban.js" ></script>
+</body>
+</html>

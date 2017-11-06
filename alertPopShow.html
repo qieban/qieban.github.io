@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+<title>组件 - 切版移动css框架</title>
+<meta charset="utf-8" />
+
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" href="assets/css/qieban.css"  />
+<link rel="stylesheet" href="js/alertPopShow/alertPopShow.css">
+
+
+</head>
+<body class="layout">
+
+	<div class="header">
+		<h1><a href="index.html"><img src="imgs/logo.png"/></a></h1>
+    	<div class="left">
+        	        </div>
+    	<div class="right">        </div>
+    </div>
+
+<div class="wrapper hero">
+	<h1>alertPopShow.JS</h1>
+    <h2>适用于移动端的js弹出框架</h2>
+</div>
+
+<div class="wrapper">
+	 
+	<div class="demo" id="demo1">toast</div>
+	<div class="demo" id="demo2">alert</div>
+	<div class="demo" id="demo3">confirm</div>
+	<div class="demo" id="demo4">confirm+input</div>
+</div>
+
+
+
+
+<div class="footer">
+	切版 qieban（.cn）</div>
+
+
+<script src="assets/js/jquery-1.8.3.min.js" ></script>
+<script src="assets/js/jquery.mobile-1.0.1.min.js"></script>
+<!--解决手机端click点击延迟-->
+<script src="js/fastclick.js"></script>
+<script src="assets/js/qieban.js" ></script>
+<script type="text/javascript" src="js/alertPopShow/alertPopShow.js"></script>
+<script type="text/javascript">
+    $(function(){
+	
+	   $('#demo1').on('click', function(){
+			webToast("恭喜您，修改成功恭喜您，修改成功恭喜您修改成功恭喜您","middle",3000);
+	   });
+	   
+	   $('#demo2').on('click', function(){
+			popTipShow.alert('弹窗标题','自定义弹窗内容，居左对齐显示，告知需要确认的信息等', ['知道了'],
+				function(e){
+				  //callback 处理按钮事件		  
+				  var button = $(e.target).attr('class');
+				  if(button == 'ok'){
+					//按下确定按钮执行的操作
+					//todo ....
+					this.hide();
+				  }	
+				}
+			);
+	   });
+	   
+	   $('#demo3').on('click', function(){
+			popTipShow.confirm('弹窗标题','自定义弹窗内容，居左对齐显示，告知需要确认的信息等',['确 定','取 消'],
+				function(e){
+				  //callback 处理按钮事件
+				  var button = $(e.target).attr('class');
+				  if(button == 'ok'){
+					//按下确定按钮执行的操作
+					//todo ....				
+					this.hide();
+					setTimeout(function() {
+						webToast("操作成功","top", 2000);
+					}, 300);
+				  }
+
+				  if(button == 'cancel') {
+					//按下取消按钮执行的操作
+					//todo ....
+					this.hide();
+					setTimeout(function() {
+						webToast("您选择“取消”了","bottom", 2000);
+					}, 300);
+				  }
+				}
+			);
+	   });
+	   
+	   $('#demo4').on('click', function(){
+			var html = "<label>姓名：<input class='confirm_input' placeholder='请输入'></label>";
+			popTipShow.confirm('弹窗标题',html,['确 定','取 消'],
+				function(e){
+				  //callback 处理按钮事件
+				  var button = $(e.target).attr('class');
+				  if(button == 'ok'){
+					if(null==$(".confirm_input").val() || ""==$(".confirm_input").val()){
+						webToast("姓名不能为空！","bottom", 3000);
+						return;
+					}	
+					
+					this.hide();
+					setTimeout(function() {
+						webToast($(".confirm_input").val(),"bottom", 3000);
+					}, 300);
+					
+					//按下确定按钮执行的操作
+					//todo ....								
+				  }
+
+				  if(button == 'cancel') {
+					//按下取消按钮执行的操作
+					//todo ....
+					this.hide();
+					setTimeout(function() {
+						webToast("您选择“取消”了","top", 2000);
+					}, 300);
+				  }
+				}
+			);
+	   });
+	   
+	});
+    </script>
+</body>
+</html>
